@@ -1,0 +1,86 @@
+body {
+  font-family: "Open sans", sans-serif;
+}
+
+#header-box {
+  background-color: #404042;
+
+}
+
+#header {
+  color: #EC458B;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  font-size: 65px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+
+}
+
+#sub-head {
+  color: white;
+  display: block;
+  text-align: center;
+  font-weight: 10;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+
+}
+
+
+#num {
+  font-weight: bold;
+  padding-right: 0px;
+}
+
+#guess {
+  font-weight: 100;
+  padding-left: 0px;
+}
+
+#range-box {
+  background: #FFFFFF;
+  border: 1px #EEEEEE solid;
+  width: 40%;
+  padding: 15px;
+  margin-left: 15px;
+}
+
+.range-header {
+  margin: 4px;
+  font-size: 20px;
+  color: #5E5E5E;
+}
+
+.range-input {
+  display: inline-block;
+  width: 200px;
+  color: #78767E;
+}
+
+.range-form {
+  padding-left: 3px;
+}
+
+.range-button {
+  background-color: #D1D2D4;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  float: right;
+  margin: 18px 7px 0px 0px;
+}
+
+input {
+  padding: 8px 55px 8px 0px;
+
+}
+
+hr {
+  display: inline-block;
+  width: 90px;
+}
