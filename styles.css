@@ -5,3 +5,42 @@
 body {
   background: linear-gradient(90deg, #f7f7f7 50%, #d0d2d3 50%);
 }
+#challengerName {
+  background-color: white;
+  border: solid 1px grey;
+  height: 300px;
+  width: 400px;
+
+
+}
+#currentRange {
+  padding-left: 12px;
+}
+.nameInputs {
+  display:flex;
+  justify-content: space-between;
+}
+.challengerName {
+  width: 175px;
+  height:20px;
+  /* margin-top: 15px */
+}
+.guess {
+  width: 70px;
+  height: 20px;
+  margin-top: 15px;
+}
+#buttons {
+  display: flex;
+}
+
+button.default {
+  background-color: #d0d2d3;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  width: 112px;
+  height: 20px;
+  justify-content: center;
+
+}
