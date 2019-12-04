@@ -106,7 +106,6 @@ button.default {
   display: inline-block;
 }
 
-
 p.currentGuess {
   margin-top: -13px;
   text-align: center;
@@ -117,10 +116,7 @@ p.noGuesses {
   margin-top: 4.5em;
   }
 
-
-
-
-
+/* Styling for Header */
 #header-box {
   background-color: #404042;
 
@@ -148,7 +144,12 @@ p.noGuesses {
 
 }
 
+hr {
+  display: inline-block;
+  width: 90px;
+}
 
+/* Set Range Styling */
 #num {
   font-weight: bold;
   padding-right: 0px;
@@ -197,9 +198,4 @@ p.noGuesses {
 input {
   padding: 8px 55px 8px 0px;
 
-}
-
-hr {
-  display: inline-block;
-  width: 90px;
 }
