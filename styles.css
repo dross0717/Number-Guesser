@@ -8,11 +8,14 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* Challenger Name Input Card Styling */
 #challengerNames {
   background-color: white;
   border: solid 1px #d0d2d3;
-  height: 340px;
+  height: 380px;
   width: 48%;
+  margin-top: 10px;
 }
 
 #currentRange {
@@ -39,11 +42,11 @@ body {
 }
 
 .name {
-  width: 400px;
+  width: 30em;
   height: 25px;
 }
 .guess {
-  width: 180px;
+  width: 9em;
   height: 25px;
 }
 .name,
@@ -68,13 +71,52 @@ button.default {
   width: 180px;
   height: 30px;
   justify-content: center;
-  font-size: 14pt
+  font-size: 14pt;
+  color: #ffffff;
 }
+
+/* Styling Latest Guess Card */
 #latestGuess {
   width: 48%;
   background-color: white;
   border: solid 1px #d0d2d3;
+  height: 200px;
+  margin-top:10px;
+  display: flex;
+  justify-content: space-between;
 
+}
+.challengerGuess {
+  margin-left: 12px;
+}
+#challenger1Guess {
+  margin-left: -200px;
+  margin-top: 2em;
+
+}
+#challenger2Guess {
+  margin-right: 55px;
+  margin-top: 2em;
+  height: 150px;
+  border-left: solid 2px #d0d2d3;
+  padding-left: 110px;
+}
+#challenger1Guess,
+#challenger2Guess {
+  display: inline-block;
+}
+
+p.currentGuess {
+  margin-top: -13px;
+  text-align: center;
+}
+p.noGuesses {
+  height: 30px;
+  text-align: center;
+  margin-top: 4.5em;
+  }
+
+/* Styling for Header */
 #header-box {
   background-color: #404042;
 
@@ -102,7 +144,12 @@ button.default {
 
 }
 
+hr {
+  display: inline-block;
+  width: 90px;
+}
 
+/* Set Range Styling */
 #num {
   font-weight: bold;
   padding-right: 0px;
@@ -151,9 +198,4 @@ button.default {
 input {
   padding: 8px 55px 8px 0px;
 
-}
-
-hr {
-  display: inline-block;
-  width: 90px;
 }
