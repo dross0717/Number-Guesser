@@ -1,10 +1,8 @@
-<html>
-
+<!doctype html>
 <head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
 </head>
-
 <body>
   <div id="header-box">
     <h1 id="header"><span id="num">NUMBER</span><span id="guess">GUESSER</span></h1>
@@ -25,3 +23,40 @@
       </div>
       <button class="range-button" type="button">UPDATE</button>
     </form>
+  </div>
+  <div id="challengerNames">
+      <p id="currentRange">The Current Range is <strong><u>1</u></strong> to <strong><u>100</u></strong>
+      </p>
+    <div id="inputSection1">
+      <p class="challenger"><strong>Challenger 1</strong></p>
+      <div class="inputFields" id="nameInput">
+        <p>Name</p>
+        <input class="name"></input>
+      </div>
+      <div class="inputFields">
+        <p>Guess</p>
+        <input class="guess"></input>
+      </div>
+    </div>
+    <div id="inputSection2">
+      <p class="challenger"><strong>Challenger 2</strong></p>
+      <div class="inputFields" id="nameInput">
+        <p>Name</p>
+        <input class="name"></input>
+      </div>
+      <div class="inputFields">
+        <p>Guess</p>
+        <input class="guess"></input>
+      </div>
+    </div>
+    <div id="buttons">
+      <button id="submitGuess" class="challengerButtons default">SUBMIT GUESS</button>
+      <button id="resetGame" class="challengerButtons default ">RESET GAME</button>
+      <button id="clearForm" class="challengerButtons default">CLEAR FORM</button>
+    </div>
+    </div>
+  <div id="latestGuess">
+    <p class="challenger"> Latest Guess </p>
+  </div>
+
+</body>

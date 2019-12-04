@@ -1,6 +1,79 @@
-body {
-  font-family: "Open sans", sans-serif;
+* {
+  font-family: 'Open Sans', sans-serif;
 }
+
+body {
+  height: 1000px;
+  background: linear-gradient(90deg, #f7f7f7 50%, #d0d2d3 50%);
+  display: flex;
+  flex-direction: column;
+}
+#challengerNames {
+  background-color: white;
+  border: solid 1px #d0d2d3;
+  height: 340px;
+  width: 48%;
+}
+
+#currentRange {
+  padding-left: 12px;
+  margin-top: 8px;
+}
+
+.challenger {
+  padding-left: 12px;
+  font-size: 14pt;
+  width: 500px;
+  margin-bottom: -10px;
+
+}
+
+.inputFields {
+  padding-left: 12px;
+}
+
+#inputSection1,
+#inputSection2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.name {
+  width: 400px;
+  height: 25px;
+}
+.guess {
+  width: 180px;
+  height: 25px;
+}
+.name,
+.guess {
+  display: inline-block;
+}
+
+#buttons {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 5px;
+  padding-right: 5px;
+  align-items: flex-end;
+  height: 40px;
+}
+
+button.default {
+  background-color: #d0d2d3;
+  color: white;
+  font-weight: bold;
+  border-radius: 15px;
+  width: 180px;
+  height: 30px;
+  justify-content: center;
+  font-size: 14pt
+}
+#latestGuess {
+  width: 48%;
+  background-color: white;
+  border: solid 1px #d0d2d3;
 
 #header-box {
   background-color: #404042;
