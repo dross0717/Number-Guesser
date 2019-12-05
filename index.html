@@ -2,7 +2,7 @@
 <head>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="main.js"></script>
+
 </head>
 <body>
   <div id="header-box">
@@ -30,24 +30,26 @@
       </p>
     <div id="inputSection1">
       <p class="challenger"><strong>Challenger 1</strong></p>
-      <div class="inputFields" id="nameInput">
+      <div class="inputFields nameInput">
         <p>Name</p>
-        <input class="name" onclick="enableClearFormButton()"></input>
+        <input id="nameInputField" oninput="enableClearFormButton()" class="name"></input>
       </div>
       <div class="inputFields">
         <p>Guess</p>
-        <input class="guess" onclick="enableClearFormButton()"></input>
+        <input id="guessInputField"
+        oninput="enableClearFormButton()" class="guess"></input>
       </div>
     </div>
     <div id="inputSection2">
       <p class="challenger"><strong>Challenger 2</strong></p>
-      <div class="inputFields" id="nameInput">
+      <div class="inputFields nameInput">
         <p>Name</p>
-        <input class="name" onclick="enableClearFormButton()"></input>
+        <input id="nameInputField2" oninput="enableClearFormButton()" class="name"></input>
       </div>
       <div class="inputFields">
         <p>Guess</p>
-        <input class="guess" onclick="enableClearFormButton()"></input>
+        <input id="guessInputField2"
+        oninput="enableClearFormButton()" class="guess"></input>
       </div>
     </div>
     <div id="buttons">
@@ -73,5 +75,7 @@
       <p class="noGuesses">that's too low!</p> -->
     </div>
   </div>
+
+<script type="text/javascript" src="main.js"></script>
 
 </body>
