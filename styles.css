@@ -79,6 +79,7 @@ body {
   background-color: #6e6e6e;
 }
 
+
 /* Styling Latest Guess Card */
 #latestGuess {
   width: 48%;
@@ -206,6 +207,10 @@ hr {
   font-weight: bold;
   float: right;
   margin: 18px 7px 0px 0px;
+}
+
+.updateButton{
+  background-color: #6e6e6e;
 }
 
 input {

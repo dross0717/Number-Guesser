@@ -16,17 +16,17 @@
     <form class="range-form">
       <div class="range-input">
       Min Range<br>
-      <input class=type="text">
+      <input oninput="submitRange()" id="minimum" class= "range" type="text" >
       </div>
       <div class="range-input">
       Max Range<br>
-      <input type="text">
+      <input oninput="submitRange()" id="maximum" class="range" type="text" >
       </div>
-      <button class="range-button" type="button">UPDATE</button>
+      <button class="range-button" type="button" onclick="submitRange()">UPDATE</button>
     </form>
   </div>
   <div id="challengerNames">
-      <p id="currentRange">The Current Range is <strong><u>1</u></strong> to <strong><u>100</u></strong>
+      <p id="currentRange">The Current Range is <strong id="min"><u>1</u></strong> to <strong id="max"><u>100</u></strong>
       </p>
     <div id="inputSection1">
       <p class="challenger"><strong>Challenger 1</strong></p>
