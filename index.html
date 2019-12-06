@@ -2,6 +2,7 @@
 <head>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <div id="header-box">
@@ -29,30 +30,48 @@
       </p>
     <div id="inputSection1">
       <p class="challenger"><strong>Challenger 1</strong></p>
-      <div class="inputFields" id="nameInput">
+      <div class="inputFields nameInput">
         <p>Name</p>
+<<<<<<< HEAD
         <input class="name input-submit1"></input>
       </div>
       <div class="inputFields">
         <p>Guess</p>
         <input class="guess input-submit2"></input>
+=======
+        <input id="nameInputField" oninput="enableClearFormButton()" class="name"></input>
+      </div>
+      <div class="inputFields">
+        <p>Guess</p>
+        <input id="guessInputField"
+        oninput="enableClearFormButton()" class="guess"></input>
+>>>>>>> master
       </div>
     </div>
     <div id="inputSection2">
       <p class="challenger"><strong>Challenger 2</strong></p>
-      <div class="inputFields" id="nameInput">
+      <div class="inputFields nameInput">
         <p>Name</p>
+<<<<<<< HEAD
         <input class="name input-submit3" ></input>
       </div>
       <div class="inputFields">
         <p>Guess</p>
         <input class="guess input-submit4"></input>
+=======
+        <input id="nameInputField2" oninput="enableClearFormButton()" class="name"></input>
+      </div>
+      <div class="inputFields">
+        <p>Guess</p>
+        <input id="guessInputField2"
+        oninput="enableClearFormButton()" class="guess"></input>
+>>>>>>> master
       </div>
     </div>
     <div id="buttons">
       <button disabled id="submitGuess" class="challengerButtons default submitGuessButton">SUBMIT GUESS</button>
       <button id="resetGame" class="challengerButtons default ">RESET GAME</button>
-      <button id="clearForm" class="challengerButtons default">CLEAR FORM</button>
+      <button id="clearForm" class="challengerButtons default" onclick="clearForms()">CLEAR FORM</button>
     </div>
     </div>
   <div id="latestGuess">
@@ -60,17 +79,27 @@
     <div id="challenger1Guess">
       <p class="latestGuessChallenger"><strong>Challenger 1 Name</strong></p>
       <p class="currentGuess">current guess</p>
+      <p id="latestGuessNumber"><strong>XX</strong></p>
       <p class="noGuesses">no guesses yet!</p>
     </div>
     <div id="challenger2Guess">
       <p class="latestGuessChallenger"><strong>Challenger 2 Name</strong></p>
       <p class="currentGuess">current guess</p>
+      <p id="latestGuessNumber"><strong>XX</strong></p>
       <p class="noGuesses">no guesses yet!</p>
+      <!-- <p class="noGuesses">that's too high!</p>
+      <p class="noGuesses">that's too low!</p> -->
     </div>
   </div>
 
+<<<<<<< HEAD
 <script src="main.js"></script>
 
 </body>
 
+=======
+<script type="text/javascript" src="main.js"></script>
+
+</body>
+>>>>>>> master
 </html>
