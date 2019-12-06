@@ -95,6 +95,7 @@ button.default {
 
 }
 
+
 #challenger2Guess {
   margin-right: 55px;
   margin-top: 2em;
@@ -164,9 +165,9 @@ hr {
 #range-box {
   background: #FFFFFF;
   border: 1px #EEEEEE solid;
-  width: 40%;
+  width: 654px;
   padding: 15px;
-  margin-left: 15px;
+  margin: 20px 0px 0px 0px;
 }
 
 .range-header {
