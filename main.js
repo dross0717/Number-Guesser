@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-// var inputFieldSubmit = document.querySelectorAll(".input-submit")
-//
-// for (var i = 0; i < inputFieldSubmit.length; i++) {
-//   inputFieldSubmit[i].addEventListener("keyup", enableSubmit)
-// };
-//
-// function enableSubmit() {
-//   var challengerSubmit = document.querySelector(".submitGuessButton");
-//   for (var i = 0; i < inputFieldSubmit.length; i++){
-//     if (inputFieldSubmit[i].length.value > 0){
-//       challengerSubmit.disabled = true;
-//     } else {
-//       challengerSubmit.disabled = false;
-//     };
-//   };
-// };
-
-
-
 var inputSubmit1 = document.querySelector(".input-submit1");
 var inputSubmit2 = document.querySelector(".input-submit2");
 var inputSubmit3 = document.querySelector(".input-submit3");
@@ -38,14 +18,13 @@ function enableSubmit() {
     inputSubmitButton.disabled = true;
   };
 };
-=======
 
 function enableClearFormButton() {
   console.log("clear button enable");
   var nameInput = document.getElementsByClassName("name");
   var guessInput = document.getElementsByClassName("guess");
   var clearFormButton = document.getElementById("clearForm");
-  if (nameInput.value === "") {
+  if (nameInput.value === "" ) {
       clearFormButton.disabled = true;
     } else {
       clearFormButton.disabled = false
@@ -60,4 +39,30 @@ document.getElementById("nameInputField2").value = "";
 document.getElementById("guessInputField").value = "";
 document.getElementById("nameInputField").value = "";
 }
->>>>>>> master
+
+
+
+
+function submitRange() {
+  console.log('submit range');
+  var minInput = document.getElementById("minimum");
+  var maxInput = document.getElementById("maximum");
+  var submitRangeButton = document.getElementsByClassName("range-button");
+  if (minInput.value !== "" && maxInput.value !== "") {
+    submitRangeButton[0].classList.add("updateButton");
+    submitRangeButton[0].disabled = false;
+    }
+  else {
+    submitRangeButton[0].classList.remove("updateButton");
+    submitRangeButton[0].disabled = true
+
+  }
+
+}
+// function replaceCurrentRangeText() {
+//   console.log("replacing text");
+//   var minGuess = document.getElementById("min");
+//   var maxGuess = document.getElementById("max");
+//   console.log('variables');
+//   minGuess.replace(minGuess);
+// }
