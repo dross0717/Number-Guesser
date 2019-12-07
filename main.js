@@ -59,10 +59,16 @@ function submitRange() {
   }
 
 }
-// function replaceCurrentRangeText() {
-//   console.log("replacing text");
-//   var minGuess = document.getElementById("min");
-//   var maxGuess = document.getElementById("max");
-//   console.log('variables');
-//   minGuess.replace(minGuess);
-// }
+function replaceCurrentRangeText() {
+  console.log("replacing text");
+  var minGuess = document.getElementById("minimum").value;
+    console.log(minGuess);
+  var maxGuess = document.getElementById("maximum").value;
+  console.log(maxGuess);
+  var minRange = document.getElementById("minOfRange");
+  var maxRange = document.getElementById("maxOfRange");
+
+minRange.innerHTML = minGuess;
+maxRange.innerHTML = maxGuess;
+
+}

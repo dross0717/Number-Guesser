@@ -22,56 +22,48 @@
       Max Range<br>
       <input oninput="submitRange()" id="maximum" class="range" type="text" >
       </div>
-      <button class="range-button" type="button" onclick="submitRange()">UPDATE</button>
+      <button class="range-button" type="button" onclick="submitRange(); replaceCurrentRangeText()">UPDATE</button>
     </form>
   </div>
   <div id="challengerNames">
-      <p id="currentRange">The Current Range is <strong id="min"><u>1</u></strong> to <strong id="max"><u>100</u></strong>
+      <p id="currentRange">The Current Range is <strong><u id="minOfRange">1</u></strong> to <strong><u id="maxOfRange">100</u></strong>
       </p>
+
     <div id="inputSection1">
       <p class="challenger"><strong>Challenger 1</strong></p>
       <div class="inputFields nameInput">
         <p>Name</p>
-
-        <input class="name input-submit1"></input>
+        <input id="nameInputField" class="name input-submit1" oninput="enableClearFormButton()"></input>
       </div>
       <div class="inputFields">
         <p>Guess</p>
-        <input class="guess input-submit2"></input>
-        <input id="nameInputField" oninput="enableClearFormButton()" class="name"></input>
+        <input id="guessInputField" oninput="enableClearFormButton()" class="guess input-submit2"></input>
+        <!-- <input  class="name"></input> -->
       </div>
-      <div class="inputFields">
+      <!-- <div class="inputFields">
         <p>Guess</p>
         <input id="guessInputField"
-        oninput="enableClearFormButton()" class="guess"></input>
-
-      </div>
+        oninput="enableClearFormButton()" class="guess"></input> -->
     </div>
+
     <div id="inputSection2">
       <p class="challenger"><strong>Challenger 2</strong></p>
       <div class="inputFields nameInput">
         <p>Name</p>
-
-        <input class="name input-submit3" ></input>
-      </div>
-      <div class="inputFields">
-        <p>Guess</p>
-        <input class="guess input-submit4"></input>
-        <input id="nameInputField2" oninput="enableClearFormButton()" class="name"></input>
+        <input id="nameInputField2" class="name input-submit3" oninput="enableClearFormButton()"></input>
       </div>
       <div class="inputFields">
         <p>Guess</p>
         <input id="guessInputField2"
-        oninput="enableClearFormButton()" class="guess"></input>
-
+        oninput="enableClearFormButton()" class="guess input-submit4"></input>
       </div>
-    </div>
+      </div>
     <div id="buttons">
       <button disabled id="submitGuess" class="challengerButtons default submitGuessButton">SUBMIT GUESS</button>
       <button id="resetGame" class="challengerButtons default ">RESET GAME</button>
       <button id="clearForm" class="challengerButtons default" onclick="clearForms()">CLEAR FORM</button>
     </div>
-    </div>
+  </div>
   <div id="latestGuess">
     <p class="challengerGuess"><strong> Latest Guess </strong></p>
     <div id="challenger1Guess">
