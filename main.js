@@ -17,12 +17,21 @@
 //   };
 // };
 
+function clearSubmitInput() {
+  console.log('clear inputs');
+document.querySelector(".input-submit1").value = "";
+document.querySelector(".input-submit2").value = "";
+document.querySelector(".input-submit3").value = "";
+document.querySelector(".input-submit4").value = "";
+}
+
+
 function enableClearFormButton() {
   console.log("clear button enable");
   var nameInput = document.getElementsByClassName("name");
   var guessInput = document.getElementsByClassName("guess");
   var clearFormButton = document.getElementById("clearForm");
-  if (nameInput.value === "" ) {
+  if (nameInput.value === "") {
       clearFormButton.disabled = true;
     } else {
       clearFormButton.disabled = false
@@ -77,7 +86,6 @@ function confirmGuessInput() {
     inputSubmitButton.disabled = false;
   }
   else {
-    console.log("hey")
     inputSubmitButton.disabled = true;
   };
 }
