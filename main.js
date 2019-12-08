@@ -19,12 +19,21 @@ function enableSubmit() {
   };
 };
 
+function clearSubmitInput() {
+  console.log('clear inputs');
+document.querySelector(".input-submit1").value = "";
+document.querySelector(".input-submit2").value = "";
+document.querySelector(".input-submit3").value = "";
+document.querySelector(".input-submit4").value = "";
+}
+
+
 function enableClearFormButton() {
   console.log("clear button enable");
   var nameInput = document.getElementsByClassName("name");
   var guessInput = document.getElementsByClassName("guess");
   var clearFormButton = document.getElementById("clearForm");
-  if (nameInput.value === "" ) {
+  if (nameInput.value === "") {
       clearFormButton.disabled = true;
     } else {
       clearFormButton.disabled = false
@@ -38,37 +47,4 @@ document.getElementById("guessInputField2").value = "";
 document.getElementById("nameInputField2").value = "";
 document.getElementById("guessInputField").value = "";
 document.getElementById("nameInputField").value = "";
-}
-
-
-
-
-function submitRange() {
-  console.log('submit range');
-  var minInput = document.getElementById("minimum");
-  var maxInput = document.getElementById("maximum");
-  var submitRangeButton = document.getElementsByClassName("range-button");
-  if (minInput.value !== "" && maxInput.value !== "") {
-    submitRangeButton[0].classList.add("updateButton");
-    submitRangeButton[0].disabled = false;
-    }
-  else {
-    submitRangeButton[0].classList.remove("updateButton");
-    submitRangeButton[0].disabled = true
-
-  }
-
-}
-function replaceCurrentRangeText() {
-  console.log("replacing text");
-  var minGuess = document.getElementById("minimum").value;
-    console.log(minGuess);
-  var maxGuess = document.getElementById("maximum").value;
-  console.log(maxGuess);
-  var minRange = document.getElementById("minOfRange");
-  var maxRange = document.getElementById("maxOfRange");
-
-minRange.innerHTML = minGuess;
-maxRange.innerHTML = maxGuess;
-
 }
