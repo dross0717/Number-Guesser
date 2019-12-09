@@ -39,6 +39,7 @@ document.querySelector(".input-submit3").value = "";
 document.querySelector(".input-submit4").value = "";
 }
 
+inputSubmitButton.addEventListener("click", clearSubmitInput)
 
 function enableClearFormButton() {
   console.log("clear button enable");
