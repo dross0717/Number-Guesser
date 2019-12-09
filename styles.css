@@ -5,7 +5,11 @@
 body {
   height: auto;
   background: linear-gradient(90deg, #f7f7f7 50%, #d0d2d3 50%);
+}
 
+#page {
+  display: flex;
+  flex-direction: column;
 }
 #page {
   display:flex;
@@ -25,14 +29,16 @@ body {
 
 
 }
+
 /* Challenger Name Input Card Styling */
 #challengerNames {
   background-color: white;
-  border: solid 1px #d0d2d3;
+  border: solid 1px #D0D2D3;
   height: auto;
   width: 98%;
   margin-top: 10px;
 }
+
 .challengerButtons {
   width: 200px;
 }
@@ -47,7 +53,6 @@ body {
   font-size: 14pt;
   width: 500px;
   margin-bottom: -10px;
-
 }
 
 .inputFields {
@@ -64,10 +69,12 @@ body {
   width: 30em;
   height: 25px;
 }
+
 .guess {
   width: 9em;
   height: 25px;
 }
+
 .name,
 .guess {
   display: inline-block;
@@ -84,7 +91,7 @@ body {
 }
 
 .default {
-  background-color: #d0d2d3;
+  background-color: #D0D2D3;
   color: white;
   font-weight: bold;
   border-radius: 15px;
@@ -92,11 +99,11 @@ body {
   height: 30px;
   justify-content: center;
   font-size: 14pt;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .clearForm {
-  background-color: #6e6e6e;
+  background-color: #6E6E6E;
 }
 
 .titleUnderline {
@@ -108,30 +115,30 @@ body {
 #latestGuess {
   width: 98%;
   background-color: white;
-  border: solid 1px #d0d2d3;
+  border: solid 1px #D0D2D3;
   height: 200px;
-  margin-top:10px;
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
-
 }
+
 .challengerGuess {
   margin-left: 12px;
 }
+
 #challenger1Guess {
   margin-left: -200px;
   margin-top: 2em;
-
 }
-
 
 #challenger2Guess {
   margin-right: 55px;
   margin-top: 2em;
   height: 150px;
-  border-left: solid 2px #d0d2d3;
+  border-left: solid 2px #D0D2D3;
   padding-left: 110px;
 }
+
 #challenger1Guess,
 #challenger2Guess {
   display: inline-block;
@@ -141,20 +148,21 @@ p.currentGuess {
   margin-top: -13px;
   text-align: center;
 }
+
 p.noGuesses {
   height: 30px;
   text-align: center;
   margin-top: 1em;
-  }
+}
 
-#latestGuessNumber{
+#latestGuessNumber {
   font-size: 30pt;
-  color:#dd1972;
-  text-align:center;
+  color: #dd1972;
+  text-align: center;
   margin-top: -10px;
   margin-bottom: -10px;
-
 }
+
 /* Styling for Header */
 #header-box {
   background-color: #404042;
@@ -170,8 +178,6 @@ p.noGuesses {
   font-size: 65px;
   margin-bottom: 0px;
   padding-bottom: 0px;
-
-
 }
 
 #sub-head {
@@ -182,7 +188,6 @@ p.noGuesses {
   margin-top: 0px;
   padding-top: 0px;
   padding-bottom: 20px;
-
 }
 
 #headerHR {
@@ -235,13 +240,12 @@ p.noGuesses {
   margin: 18px 7px 0px 0px;
 }
 
-.updateButton{
-  background-color: #6e6e6e;
+.updateButton {
+  background-color: #6E6E6E;
 }
 
 input {
   padding: 8px 55px 8px 0px;
-
 }
 
 #gamecard {
@@ -249,17 +253,16 @@ input {
   height: auto;
   border: 1px #EEEEEE solid;
   background-color: white;
-  margin-top:10px;
+  margin-top: 10px;
   float: right;
   width: 98%;
 
-
-
-
 }
+
 #vs {
   font-weight: normal;
 }
+
 .gameCardTitle {
   text-align: center;
 }
@@ -269,12 +272,12 @@ input {
   font-size: 18pt;
   margin-top: 10px;
 }
+
 .winnerText {
   font-size: 14pt;
   text-align: center;
   margin-top: -20px;
   margin-bottom: 15px;
-
 }
 #gameCardGuessesandTime {
   display: flex;
