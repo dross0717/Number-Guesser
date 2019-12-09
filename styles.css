@@ -3,22 +3,26 @@
 }
 
 body {
-  height: 1000px;
+  height: auto;
   background: linear-gradient(90deg, #f7f7f7 50%, #d0d2d3 50%);
-  display: flex;
-  flex-direction: row;
 
-
+}
+#page {
+  display:flex;
 }
 
 #column1 {
   flex-direction: column;
+  width:50%
 
 }
 
 #column2 {
-  float:right;
+  /* display:flex; */
   flex-direction: column;
+  justify-content: flex-start;
+  width:50%
+
 
 }
 /* Challenger Name Input Card Styling */
@@ -26,7 +30,7 @@ body {
   background-color: white;
   border: solid 1px #d0d2d3;
   height: auto;
-  width: 60%;
+  width: 98%;
   margin-top: 10px;
 }
 .challengerButtons {
@@ -95,10 +99,14 @@ body {
   background-color: #6e6e6e;
 }
 
+.titleUnderline {
+  margin-left: 20px;
+  margin-right: 20px
+}
 
 /* Styling Latest Guess Card */
 #latestGuess {
-  width: 60%;
+  width: 98%;
   background-color: white;
   border: solid 1px #d0d2d3;
   height: 200px;
@@ -150,17 +158,19 @@ p.noGuesses {
 /* Styling for Header */
 #header-box {
   background-color: #404042;
-
+  display: flex;
+  flex-direction: column;
 }
 
 #header {
   color: #EC458B;
-  display: block;
+  display: flex;
   justify-content: center;
   text-align: center;
   font-size: 65px;
   margin-bottom: 0px;
   padding-bottom: 0px;
+
 
 }
 
@@ -175,7 +185,7 @@ p.noGuesses {
 
 }
 
-hr {
+#headerHR {
   display: inline-block;
   width: 90px;
 }
@@ -194,8 +204,8 @@ hr {
 #range-box {
   background: #FFFFFF;
   border: 1px #EEEEEE solid;
-  width: 57%;
-  padding: 15px;
+  width: 95%;
+  padding:10px;
   margin: 20px 0px 0px 0px;
 }
 
@@ -241,6 +251,10 @@ input {
   background-color: white;
   margin-top:10px;
   float: right;
+  width: 98%;
+
+
+
 
 }
 #vs {
@@ -249,10 +263,7 @@ input {
 .gameCardTitle {
   text-align: center;
 }
-.titleUnderline {
-  margin-left: 20px;
-  margin-right: 20px
-}
+
 .winnerName {
   text-align: center;
   font-size: 18pt;
@@ -264,4 +275,23 @@ input {
   margin-top: -20px;
   margin-bottom: 15px;
 
+}
+#gameCardGuessesandTime {
+  display: flex;
+  justify-content: space-between;
+  padding-left:10px;
+  margin-top: -10px;
+}
+img{
+  width:15px;
+  height:15px;
+  margin-top:13px;
+  margin-right: 10px;
+}
+.guessNumber {
+  font-weight: bold;
+}
+.numberOfGuesses,
+.timeGuessing {
+  font-size: 12pt;
 }

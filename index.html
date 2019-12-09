@@ -5,88 +5,98 @@
 
 </head>
 <body>
-  <div id="column1">
   <div id="header-box">
     <h1 id="header"><span id="num">NUMBER</span><span id="guess">GUESSER</span></h1>
     <h2 id="sub-head">
-      <hr><span> ULTIMATE CHALLENGER EDITION </span><hr>
+      <hr id="headerHR"><span> ULTIMATE CHALLENGER EDITION </span><hr id="headerHR">
     </h2>
   </div>
-  <div id="range-box">
-    <p class="range-header"><b>Set Range</b></p>
-    <form class="range-form">
-      <div class="range-input">
-      Min Range<br>
-      <input oninput="submitRange()" id="minimum" class= "range" type="text" >
-      </div>
-      <div class="range-input">
-      Max Range<br>
-      <input oninput="submitRange()" id="maximum" class="range" type="text" >
-      </div>
-      <button class="range-button" type="button" onclick="submitRange(); replaceCurrentRangeText()">UPDATE</button>
-    </form>
-  </div>
-  <div id="challengerNames">
-      <p id="currentRange">The Current Range is <strong><u id="minOfRange">1</u></strong> to <strong><u id="maxOfRange">100</u></strong>
-      </p>
+  <div id="page">
+    <div id="column1">
+    <div id="range-box">
+      <p class="range-header"><b>Set Range</b></p>
+      <form class="range-form">
+        <div class="range-input">
+        Min Range<br>
+        <input oninput="submitRange()" id="minimum" class= "range" type="text" >
+        </div>
+        <div class="range-input">
+        Max Range<br>
+        <input oninput="submitRange()" id="maximum" class="range" type="text" >
+        </div>
+        <button class="range-button" type="button" onclick="submitRange(); replaceCurrentRangeText()">UPDATE</button>
+      </form>
+    </div>
+    <div id="challengerNames">
+        <p id="currentRange">The Current Range is <strong><u id="minOfRange">1</u></strong> to <strong><u id="maxOfRange">100</u></strong>
+        </p>
 
-    <div id="inputSection1">
-      <p class="challenger"><strong>Challenger 1</strong></p>
-      <div class="inputFields nameInput">
-        <p>Name</p>
-        <input id="nameInputField" class="name input-submit1" oninput="enableClearFormButton()"></input>
+      <div id="inputSection1">
+        <p class="challenger"><strong>Challenger 1</strong></p>
+        <div class="inputFields nameInput">
+          <p>Name</p>
+          <input id="nameInputField" class="name input-submit1" oninput="enableClearFormButton()"></input>
+        </div>
+        <div class="inputFields">
+          <p>Guess</p>
+          <input id="guessInputField" oninput="enableClearFormButton(); confirmGuessInput()" class="guess input-submit2"></input>
+        </div>
       </div>
-      <div class="inputFields">
-        <p>Guess</p>
-        <input id="guessInputField" oninput="enableClearFormButton(); confirmGuessInput()" class="guess input-submit2"></input>
+      <div id="inputSection2">
+        <p class="challenger"><strong>Challenger 2</strong></p>
+        <div class="inputFields nameInput">
+          <p>Name</p>
+          <input id="nameInputField2" class="name input-submit3" oninput="enableClearFormButton()"></input>
+        </div>
+        <div class="inputFields">
+          <p>Guess</p>
+          <input id="guessInputField2"
+          oninput="enableClearFormButton(); confirmGuessInput()" class="guess input-submit4"></input>
+        </div>
+        </div>
+      <div id="buttons">
+        <button disabled id="submitGuess" class="challengerButtons default submitGuessButton" onclick="clearSubmitInput()">SUBMIT GUESS</button>
+        <button id="resetGame" class="challengerButtons default ">RESET GAME</button>
+        <button id="clearForm" class="challengerButtons default" onclick="clearForms()">CLEAR FORM</button>
       </div>
     </div>
-    <div id="inputSection2">
-      <p class="challenger"><strong>Challenger 2</strong></p>
-      <div class="inputFields nameInput">
-        <p>Name</p>
-        <input id="nameInputField2" class="name input-submit3" oninput="enableClearFormButton()"></input>
+    <div id="latestGuess">
+      <p class="challengerGuess"><strong> Latest Guess </strong></p>
+      <div id="challenger1Guess">
+        <p class="latestGuessChallenger"><strong>Challenger 1 Name</strong></p>
+        <p class="currentGuess">current guess</p>
+        <p id="latestGuessNumber"><strong>XX</strong></p>
+        <p class="noGuesses">no guesses yet!</p>
       </div>
-      <div class="inputFields">
-        <p>Guess</p>
-        <input id="guessInputField2"
-        oninput="enableClearFormButton(); confirmGuessInput()" class="guess input-submit4"></input>
+      <div id="challenger2Guess">
+        <p class="latestGuessChallenger"><strong>Challenger 2 Name</strong></p>
+        <p class="currentGuess">current guess</p>
+        <p id="latestGuessNumber"><strong>XX</strong></p>
+        <p class="noGuesses">no guesses yet!</p>
+        <!-- <p class="noGuesses">that's too high!</p>
+        <p class="noGuesses">that's too low!</p> -->
       </div>
-      </div>
-    <div id="buttons">
-      <button disabled id="submitGuess" class="challengerButtons default submitGuessButton" onclick="clearSubmitInput()">SUBMIT GUESS</button>
-      <button id="resetGame" class="challengerButtons default ">RESET GAME</button>
-      <button id="clearForm" class="challengerButtons default" onclick="clearForms()">CLEAR FORM</button>
     </div>
   </div>
-  <div id="latestGuess">
-    <p class="challengerGuess"><strong> Latest Guess </strong></p>
-    <div id="challenger1Guess">
-      <p class="latestGuessChallenger"><strong>Challenger 1 Name</strong></p>
-      <p class="currentGuess">current guess</p>
-      <p id="latestGuessNumber"><strong>XX</strong></p>
-      <p class="noGuesses">no guesses yet!</p>
-    </div>
-    <div id="challenger2Guess">
-      <p class="latestGuessChallenger"><strong>Challenger 2 Name</strong></p>
-      <p class="currentGuess">current guess</p>
-      <p id="latestGuessNumber"><strong>XX</strong></p>
-      <p class="noGuesses">no guesses yet!</p>
-      <!-- <p class="noGuesses">that's too high!</p>
-      <p class="noGuesses">that's too low!</p> -->
-    </div>
-  </div>
-  </div>
-  <div id="column2">
-    <div id="gamecard">
-      <p class="gameCardTitle"><strong>CHALLENGER 1 NAME <span id="vs">VS</span> CHALLENGER 2 NAME </strong></p>
-      <hr class="titleUnderline"></hr>
-       <p class="winnerName"><strong >Challenger Name</strong></p>
-      <p class="winnerText">WINNER</p>
-      <hr class="titleUnderline"></hr>
-      <p class="numberOfGuesses"><span  class="guessNumber">X guesses</span>
+    <div id="column2">
+      <div id="gamecard">
+        <p class="gameCardTitle"><strong>CHALLENGER 1 NAME <span id="vs">VS</span> CHALLENGER 2 NAME </strong></p>
+        <hr class="titleUnderline"></hr>
+         <p class="winnerName"><strong >Challenger Name</strong></p>
+        <p class="winnerText">WINNER</p>
+        <hr class="titleUnderline"></hr>
+        <div id="gameCardGuessesandTime">
+          <p class="numberOfGuesses"><span  class="guessNumber">X</span> guesses</p>
+          <p class="timeGuessing"><span  class="guessNumber">x</span> MINUTE <span  class="guessNumber">xx</span> SECOND</p>
+          <img src="https://image.flaticon.com/icons/svg/1/1502.svg">
+        </div>
+        </div>
 
-<script type="text/javascript" src="main.js"></script>
+      </div>
+    </div>
+
+
+  <script type="text/javascript" src="main.js"></script>
 
 </body>
 </html>
