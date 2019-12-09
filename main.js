@@ -50,6 +50,7 @@ document.getElementById("nameInputField").value = "";
 function submitRange() {
   console.log('submit range');
   var minInput = document.getElementById("minimum");
+  console.log("minInput:", minInput);
   var maxInput = document.getElementById("maximum");
   var submitRangeButton = document.getElementsByClassName("range-button");
   if (minInput.value !== "" && maxInput.value !== "") {
@@ -76,6 +77,7 @@ minRange.innerHTML = minGuess;
 maxRange.innerHTML = maxGuess;
 
 }
+
 function confirmGuessInput() {
   var minGuess = document.getElementById("minOfRange").innerText;
   var maxGuess = document.getElementById("maxOfRange").innerText;
