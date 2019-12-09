@@ -5,7 +5,6 @@
 
 </head>
 <body>
-  <div id="column1">
   <div id="header-box">
     <h1 id="header"><span id="num">NUMBER</span><span id="guess">GUESSER</span></h1>
     <h2 id="sub-head">
@@ -38,7 +37,7 @@
       </div>
       <div class="inputFields">
         <p>Guess</p>
-        <input id="guessInputField" oninput="enableClearFormButton(); confirmGuessInput()" class="guess input-submit2"></input>
+        <input type="number" id="guessInputField" oninput="enableClearFormButton(); confirmGuessInput()" class="guess input-submit2"></input>
       </div>
     </div>
     <div id="inputSection2">
@@ -49,12 +48,12 @@
       </div>
       <div class="inputFields">
         <p>Guess</p>
-        <input id="guessInputField2"
+        <input id="guessInputField2" type="number"
         oninput="enableClearFormButton(); confirmGuessInput()" class="guess input-submit4"></input>
       </div>
       </div>
     <div id="buttons">
-      <button disabled id="submitGuess" class="challengerButtons default submitGuessButton" onclick="clearSubmitInput()">SUBMIT GUESS</button>
+      <button disabled id="submitGuess" class="challengerButtons default submitGuessButton">SUBMIT GUESS</button>
       <button id="resetGame" class="challengerButtons default ">RESET GAME</button>
       <button id="clearForm" class="challengerButtons default" onclick="clearForms()">CLEAR FORM</button>
     </div>
@@ -62,29 +61,20 @@
   <div id="latestGuess">
     <p class="challengerGuess"><strong> Latest Guess </strong></p>
     <div id="challenger1Guess">
-      <p class="latestGuessChallenger"><strong>Challenger 1 Name</strong></p>
-      <p class="currentGuess">current guess</p>
+      <p class="latestGuessChallenger guesserName1"><strong>Challenger 1 Name</strong></p>
+      <p class="currentGuess guesserNumber1">current guess</p>
       <p id="latestGuessNumber"><strong>XX</strong></p>
       <p class="noGuesses">no guesses yet!</p>
     </div>
     <div id="challenger2Guess">
-      <p class="latestGuessChallenger"><strong>Challenger 2 Name</strong></p>
-      <p class="currentGuess">current guess</p>
+      <p class="latestGuessChallenger guesserName2"><strong>Challenger 2 Name</strong></p>
+      <p class="currentGuess guesserNumber2">current guess</p>
       <p id="latestGuessNumber"><strong>XX</strong></p>
       <p class="noGuesses">no guesses yet!</p>
       <!-- <p class="noGuesses">that's too high!</p>
       <p class="noGuesses">that's too low!</p> -->
     </div>
   </div>
-  </div>
-  <div id="column2">
-    <div id="gamecard">
-      <p class="gameCardTitle"><strong>CHALLENGER 1 NAME <span id="vs">VS</span> CHALLENGER 2 NAME </strong></p>
-      <hr class="titleUnderline"></hr>
-       <p class="winnerName"><strong >Challenger Name</strong></p>
-      <p class="winnerText">WINNER</p>
-      <hr class="titleUnderline"></hr>
-      <p class="numberOfGuesses"><span  class="guessNumber">X guesses</span>
 
 <script type="text/javascript" src="main.js"></script>
 
