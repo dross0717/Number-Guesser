@@ -218,3 +218,14 @@ input {
   padding: 8px 55px 8px 0px;
 
 }
+#gamecard {
+  width: 48%;
+  height: 300px;
+  border: 1px #EEEEEE solid;
+  background-color: white;
+
+}
+#vs {
+  font-weight: normal;
+  flex-direction:
+}
