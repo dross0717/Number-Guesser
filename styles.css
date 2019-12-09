@@ -8,10 +8,6 @@ body {
 }
 
 #page {
-  display: flex;
-  flex-direction: column;
-}
-#page {
   display:flex;
 }
 
