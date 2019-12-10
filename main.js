@@ -28,10 +28,10 @@ function moveNamesAndGuesses() {
   var chosenName2 = document.getElementById("guesserName2");
   var chosenNumber1 = document.getElementById("guesserNumber1");
   var chosenNumber2 = document.getElementById("guesserNumber2");
-  chosenName1.innerHTML = inputSubmit1;
-  chosenName2.innerHTML = inputSubmit3;
-  chosenNumber1.innerHTML = inputSubmit2;
-  chosenNumber2.innerHTML = inputSubmit4;
+  chosenName1.innerHTML = inputSubmit1.value;
+  chosenName2.innerHTML = inputSubmit3.value;
+  chosenNumber1.innerHTML = inputSubmit2.value;
+  chosenNumber2.innerHTML = inputSubmit4.value;
 }
 
 inputSubmitButton.addEventListener("click", moveNamesAndGuesses);
@@ -159,6 +159,7 @@ function compareGuessesToAnswer () {
     gamecard.style.visibility = "visible"
     replaceGamecardChallengerNames();
     replaceWinnerName();
+    countNumberOfGuesses();
   }
   clearSubmitInput()
 }
@@ -187,3 +188,11 @@ function replaceWinnerName() {
     winnerName.innerText = name2
   }
 }
+
+//
+// function countNumberOfGuesses() {
+// var inputSubmitButton = document.getElementById("submitGuess");
+// var guessCount = document.getElementById("guessCount"), count = 0;
+//   count+=2;
+//   guesscount.innerText =
+// }
