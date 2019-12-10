@@ -36,7 +36,7 @@
           </div>
           <div class="inputFields">
             <p>Guess</p>
-            <input id="guessInputField" oninput="enableClearFormButton(); confirmGuessInput()" class="guess input-submit2"></input>
+            <input type="number" id="guessInputField" oninput="enableClearFormButton(); confirmGuessInput()" class="guess input-submit2"></input>
           </div>
         </div>
         <div id="inputSection2">
@@ -47,14 +47,14 @@
           </div>
           <div class="inputFields">
             <p>Guess</p>
-            <input id="guessInputField2"
+            <input type="number" id="guessInputField2"
             oninput="enableClearFormButton(); confirmGuessInput()" class="guess input-submit4"></input>
           </div>
         </div>
         <div id="buttons">
           <button disabled id="submitGuess" class="challengerButtons default submitGuessButton" onclick="clearSubmitInput()">SUBMIT GUESS</button>
-          <button id="resetGame" class="challengerButtons default ">RESET GAME</button>
-          <button id="clearForm" class="challengerButtons default" onclick="clearForms()">CLEAR FORM</button>
+          <button disabled id="resetGame" class="challengerButtons default ">RESET GAME</button>
+          <button disabled id="clearForm" class="challengerButtons default" onclick="clearForms()">CLEAR FORM</button>
         </div>
       </div>
       <div id="latestGuess">

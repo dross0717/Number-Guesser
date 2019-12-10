@@ -9,13 +9,17 @@ inputSubmit2.addEventListener("input", enableSubmit);
 inputSubmit3.addEventListener("input", enableSubmit);
 inputSubmit4.addEventListener("input", enableSubmit);
 
+
 function enableSubmit() {
   if (inputSubmit1.value != '' && inputSubmit2.value != '' && inputSubmit3.value != '' && inputSubmit4.value != '') {
-    inputSubmitButton.disabled = false;
+    return true;
   } else {
-    inputSubmitButton.disabled = true;
+    return false;
   };
 };
+
+
+inputSubmitButton.addEventListener("click", moveNamesAndGuesses);
 
 function moveNamesAndGuesses() {
   console.log("moving names and guesses down");
@@ -23,23 +27,22 @@ function moveNamesAndGuesses() {
   var chosenName2 = document.querySelector(".guesserName2");
   var chosenNumber1 = document.querySelector(".guesserNumber1");
   var chosenNumber2 = document.querySelector(".guesserNumber2");
-  chosenName1.innerHTML = inputSubmit1.value;
+  chosenName1.innerText = inputSubmit1.value;
   chosenName2.innerHTML = inputSubmit3.value;
   chosenNumber1.innerHTML = inputSubmit2.value;
   chosenNumber2.innerHTML = inputSubmit4.value;
-}
+};
 
-inputSubmitButton.addEventListener("click", moveNamesAndGuesses);
-
+inputSubmitButton.addEventListener("click", clearSubmitInput);
 function clearSubmitInput() {
   console.log('clear inputs');
-document.querySelector(".input-submit1").value = "";
-document.querySelector(".input-submit2").value = "";
-document.querySelector(".input-submit3").value = "";
-document.querySelector(".input-submit4").value = "";
+// document.querySelector(".input-submit1").value = "";
+// document.querySelector(".input-submit2").value = "";
+// document.querySelector(".input-submit3").value = "";
+// document.querySelector(".input-submit4").value = "";
 }
 
-inputSubmitButton.addEventListener("click", clearSubmitInput)
+
 
 function enableClearFormButton() {
   console.log("clear button enable");
@@ -99,7 +102,7 @@ function confirmGuessInput() {
   var inputSubmitButton = document.getElementById("submitGuess");
   var guessInput1 = parseInt(document.getElementById("guessInputField").value);
   var guessInput2 = parseInt(document.getElementById("guessInputField2").value);
-  if (guessInput1 >= minGuess && guessInput1 <= maxGuess && guessInput2 >= minGuess && guessInput2 <= maxGuess){
+  if (guessInput1 >= minGuess && guessInput1 <= maxGuess && guessInput2 >= minGuess && guessInput2 <= maxGuess && enableSubmit()){
     inputSubmitButton.disabled = false;
   }
   else {
