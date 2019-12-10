@@ -155,12 +155,35 @@ function compareGuessesToAnswer () {
   var guessInput1 = parseInt(document.getElementById("guessInputField").value);
   var guessInput2 = parseInt(document.getElementById("guessInputField2").value);
   var gameCard = document.getElementById("gamecard");
-  console.log("answer=", answer);
   if (guessInput1 === answer || guessInput2 === answer) {
-    console.log("answer correct");
     gamecard.style.visibility = "visible"
-
+    replaceGamecardChallengerNames();
+    replaceWinnerName();
   }
   clearSubmitInput()
 }
-  // var randomNumber = replaceCurrentRangeText();
+
+function replaceGamecardChallengerNames() {
+  var gamecardTitleName1 = document.getElementById("gamecardChallenger1Name");
+  var gamecardTitleName2 = document.getElementById("gamecardChallenger2Name");
+  var name1 = document.getElementById("nameInputField").value;
+  var name2 = document.getElementById("nameInputField2").value;
+
+  gamecardTitleName1.innerText = name1;
+  gamecardTitleName2.innerText = name2;
+}
+
+function replaceWinnerName() {
+  //if guess 1 is the right answer then display name 1
+  var name1 = document.getElementById("nameInputField").value;
+  var name2 = document.getElementById("nameInputField2").value;
+  var guess1 = parseInt(document.getElementById("guessInputField").value);
+  var guess2 = parseInt(document.getElementById("guessInputField2").value);
+  var winnerName = document.getElementById("winnerName");
+  if (guess1 === answer) {
+    winnerName.innerText = name1
+  }
+  if (guess2 === answer) {
+    winnerName.innerText = name2
+  }
+}
