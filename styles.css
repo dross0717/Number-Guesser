@@ -252,6 +252,7 @@ input {
   margin-top: 10px;
   float: right;
   width: 98%;
+  visibility: hidden;
 
 }
 

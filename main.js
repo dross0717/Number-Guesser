@@ -3,6 +3,11 @@ var inputSubmit2 = document.querySelector(".input-submit2");
 var inputSubmit3 = document.querySelector(".input-submit3");
 var inputSubmit4 = document.querySelector(".input-submit4");
 var inputSubmitButton = document.querySelector(".submitGuessButton");
+var minRangeInput = document.getElementById("minimum");
+var maxRangeInput = document.getElementById("maximum");
+var updateRangeButton = document.getElementById("rangeButton");
+var clearFormButton = document.getElementById("clearForm");
+
 
 inputSubmit1.addEventListener("input", enableSubmit);
 inputSubmit2.addEventListener("input", enableSubmit);
@@ -11,22 +16,22 @@ inputSubmit4.addEventListener("input", enableSubmit);
 
 function enableSubmit() {
   if (inputSubmit1.value != '' && inputSubmit2.value != '' && inputSubmit3.value != '' && inputSubmit4.value != '') {
-    inputSubmitButton.disabled = false;
+    return true;
   } else {
-    inputSubmitButton.disabled = true;
+    return false;
   };
 };
 
 function moveNamesAndGuesses() {
   console.log("moving names and guesses down");
-  var chosenName1 = document.querySelector(".guesserName1");
-  var chosenName2 = document.querySelector(".guesserName2");
-  var chosenNumber1 = document.querySelector(".guesserNumber1");
-  var chosenNumber2 = document.querySelector(".guesserNumber2");
-  chosenName1.innerHTML = inputSubmit1.value;
-  chosenName2.innerHTML = inputSubmit3.value;
-  chosenNumber1.innerHTML = inputSubmit2.value;
-  chosenNumber2.innerHTML = inputSubmit4.value;
+  var chosenName1 = document.getElementById("guesserName1");
+  var chosenName2 = document.getElementById("guesserName2");
+  var chosenNumber1 = document.getElementById("guesserNumber1");
+  var chosenNumber2 = document.getElementById("guesserNumber2");
+  chosenName1.innerHTML = inputSubmit1;
+  chosenName2.innerHTML = inputSubmit3;
+  chosenNumber1.innerHTML = inputSubmit2;
+  chosenNumber2.innerHTML = inputSubmit4;
 }
 
 inputSubmitButton.addEventListener("click", moveNamesAndGuesses);
@@ -39,7 +44,13 @@ document.querySelector(".input-submit3").value = "";
 document.querySelector(".input-submit4").value = "";
 }
 
-inputSubmitButton.addEventListener("click", clearSubmitInput)
+// inputSubmitButton.addEventListener("click", clearSubmitInput)
+
+
+inputSubmit1.addEventListener("input", enableClearFormButton);
+inputSubmit2.addEventListener("input", enableClearFormButton);
+inputSubmit3.addEventListener("input", enableClearFormButton);
+inputSubmit4.addEventListener("input", enableClearFormButton);
 
 function enableClearFormButton() {
   console.log("clear button enable");
@@ -54,6 +65,8 @@ function enableClearFormButton() {
   clearFormButton.classList.add("clearForm")
 }
 
+clearFormButton.addEventListener("click", clearForms);
+
 function clearForms() {
   console.log('clear forms');
 document.getElementById("guessInputField2").value = "";
@@ -61,6 +74,10 @@ document.getElementById("nameInputField2").value = "";
 document.getElementById("guessInputField").value = "";
 document.getElementById("nameInputField").value = "";
 }
+
+updateRangeButton.addEventListener("click", submitRange)
+minRangeInput.addEventListener("input", submitRange)
+maxRangeInput.addEventListener("input", submitRange)
 
 function submitRange() {
   console.log('submit range');
@@ -77,9 +94,15 @@ function submitRange() {
     submitRangeButton[0].disabled = true
 
   }
-
 }
+
+updateRangeButton.addEventListener("click", replaceCurrentRangeText)
+var answer ;
+
 function replaceCurrentRangeText() {
+  var minRangeInput = document.getElementById("minimum");
+  var maxRangeInput = document.getElementById("maximum");
+
   console.log("replacing text");
   var minGuess = document.getElementById("minimum").value;
     console.log(minGuess);
@@ -88,10 +111,18 @@ function replaceCurrentRangeText() {
   var minRange = document.getElementById("minOfRange");
   var maxRange = document.getElementById("maxOfRange");
 
-minRange.innerHTML = minGuess;
-maxRange.innerHTML = maxGuess;
+  minRange.innerHTML = minGuess;
+  maxRange.innerHTML = maxGuess;
+
+  answer = getWinningNumber();
+  console.log(answer, "this da answer")
 
 }
+
+
+
+inputSubmit2.addEventListener("input", confirmGuessInput);
+inputSubmit4.addEventListener("input", confirmGuessInput);
 
 function confirmGuessInput() {
   var minGuess = document.getElementById("minOfRange").innerText;
@@ -99,10 +130,37 @@ function confirmGuessInput() {
   var inputSubmitButton = document.getElementById("submitGuess");
   var guessInput1 = parseInt(document.getElementById("guessInputField").value);
   var guessInput2 = parseInt(document.getElementById("guessInputField2").value);
-  if (guessInput1 >= minGuess && guessInput1 <= maxGuess && guessInput2 >= minGuess && guessInput2 <= maxGuess){
+  if (guessInput1 >= minGuess && guessInput1 <= maxGuess && guessInput2 >= minGuess && guessInput2 <= maxGuess && enableSubmit()){
     inputSubmitButton.disabled = false;
   }
   else {
     inputSubmitButton.disabled = true;
   };
+
 }
+
+
+// need to call after user inputs range and hits update
+function getWinningNumber() {
+  var minRangeInput = parseInt(document.getElementById("minimum").value);
+  var maxRangeInput = parseInt(document.getElementById("maximum").value);
+  return Math.floor(Math.random() * (maxRangeInput - minRangeInput) + minRangeInput);
+
+}
+
+
+inputSubmitButton.addEventListener("click", compareGuessesToAnswer);
+
+function compareGuessesToAnswer () {
+  var guessInput1 = parseInt(document.getElementById("guessInputField").value);
+  var guessInput2 = parseInt(document.getElementById("guessInputField2").value);
+  var gameCard = document.getElementById("gamecard");
+  console.log("answer=", answer);
+  if (guessInput1 === answer || guessInput2 === answer) {
+    console.log("answer correct");
+    gamecard.style.visibility = "visible"
+
+  }
+  clearSubmitInput()
+}
+  // var randomNumber = replaceCurrentRangeText();
