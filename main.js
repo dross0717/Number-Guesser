@@ -8,7 +8,8 @@ var maxRangeInput = document.getElementById("maximum");
 var updateRangeButton = document.getElementById("rangeButton");
 var clearFormButton = document.getElementById("clearForm");
 var guessCount = 0;
-// var guessCount = 0;
+var exitButton = document.getElementById("exit");
+
 
 inputSubmit1.addEventListener("input", enableSubmit);
 inputSubmit2.addEventListener("input", enableSubmit);
@@ -157,9 +158,16 @@ function compareGuessesToAnswer () {
   var guessInput2 = parseInt(document.getElementById("guessInputField2").value);
   var gameCard = document.getElementById("gamecard");
   if (guessInput1 === answer || guessInput2 === answer) {
-    gamecard.style.visibility = "visible"
+    gamecard.style.visibility = "visible";
+    minRangeInput.value = "";
+    maxRangeInput.value = "";
+    updateRangeButton.disabled = true;
+    clearFormButton.disabled = true;
+    updateRangeButton.classList.remove("updateButton");
+    clearFormButton.classList.remove("clearForm");
     replaceGamecardChallengerNames();
     replaceWinnerName();
+    disableInputsonGameReset();
 
   }
   clearSubmitInput()
@@ -199,4 +207,35 @@ function countGuesses() {
 guessCount+=2;
 guessCounterGamecard.innerText = guessCount;
 
+}
+
+exitButton.addEventListener('click', deleteGameCard);
+
+function deleteGameCard() {
+  gamecard.style.visibility = "hidden";
+  minRangeInput.value = "";
+  maxRangeInput.value = "";
+  inputSubmit1.value = "";
+  inputSubmit2.value = "";
+  inputSubmit3.value = "";
+  inputSubmit4.value = "";
+  console.log("calldisableinput");
+}
+
+
+minRangeInput.addEventListener('input', disableInputsonGameReset);
+
+function disableInputsonGameReset() {
+  console.log("rundisableinput")
+  if (minRangeInput.value == "" && maxRangeInput.value == "") {
+  inputSubmit1.disabled = true;
+  inputSubmit2.disabled = true;
+  inputSubmit3.disabled = true;
+  inputSubmit4.disabled = true;
+} else {
+  inputSubmit1.disabled = false;
+  inputSubmit2.disabled = false;
+  inputSubmit3.disabled = false;
+  inputSubmit4.disabled = false;
+}
 }
