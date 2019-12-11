@@ -25,8 +25,7 @@ function enableSubmit() {
   } else {
     return false;
   };
-};
-
+}
 
 function moveNamesAndGuesses() {
   console.log("moving names and guesses down");
@@ -59,10 +58,6 @@ function moveNamesAndGuesses() {
 inputSubmitButton.addEventListener("click", clearSubmitInput);
 function clearSubmitInput() {
   console.log('clear inputs');
-// document.querySelector(".input-submit1").value = "";
-// document.querySelector(".input-submit2").value = "";
-// document.querySelector(".input-submit3").value = "";
-// document.querySelector(".input-submit4").value = "";
 }
 
 function giveHintsChallenger1() {
@@ -154,8 +149,6 @@ function replaceCurrentRangeText() {
 
 }
 
-
-
 inputSubmit2.addEventListener("input", confirmGuessInput);
 inputSubmit4.addEventListener("input", confirmGuessInput);
 
@@ -180,7 +173,6 @@ function getWinningNumber() {
   return Math.floor(Math.random() * (maxRangeInput - minRangeInput) + minRangeInput);
 
 }
-
 
 inputSubmitButton.addEventListener("click", compareGuessesToAnswer);
 
@@ -213,7 +205,6 @@ function disableAllButtons() {
   inputSubmitButton.disabled = true;
   clearFormButton.disabled = true;
   resetGame.disabled = true;
-
 }
 
 function replaceGamecardChallengerNames() {
@@ -241,10 +232,7 @@ function replaceWinnerName() {
   }
 }
 
-
 inputSubmitButton.addEventListener('click', countGuesses);
-
-
 function countGuesses() {
   var guessCounterGamecard = document.getElementById("guessNumber");
 guessCount+=2;
@@ -266,7 +254,6 @@ function deleteGameCard() {
   console.log("calldisableinput");
 }
 
-
 minRangeInput.addEventListener('input', disableInputsonGameReset);
 
 function disableInputsonGameReset() {
@@ -281,5 +268,9 @@ function disableInputsonGameReset() {
   inputSubmit2.disabled = false;
   inputSubmit3.disabled = false;
   inputSubmit4.disabled = false;
+  }
 }
+
+function generateNewGamecard() {
+
 }
