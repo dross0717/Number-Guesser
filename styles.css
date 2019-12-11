@@ -102,6 +102,10 @@ body {
   background-color: #6E6E6E;
 }
 
+.submitForm {
+  background-color: #6E6E6E;
+}
+
 .titleUnderline {
   margin-left: 20px;
   margin-right: 20px
@@ -151,12 +155,13 @@ p.noGuesses {
   margin-top: 1em;
 }
 
-#latestGuessNumber {
+.latestGuessNumber {
   font-size: 30pt;
   color: #dd1972;
   text-align: center;
   margin-top: -10px;
   margin-bottom: -10px;
+  font-weight: bold;
 }
 
 /* Styling for Header */
@@ -252,7 +257,6 @@ input {
   margin-top: 10px;
   float: right;
   width: 98%;
-  visibility: hidden;
 
 }
 
@@ -264,11 +268,10 @@ input {
   text-align: center;
 }
 
-#winnerName {
+.winnerName {
   text-align: center;
   font-size: 18pt;
   margin-top: 10px;
-  font-weight: bold;
 }
 
 .winnerText {

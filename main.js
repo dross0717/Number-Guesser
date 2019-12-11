@@ -7,19 +7,17 @@ var minRangeInput = document.getElementById("minimum");
 var maxRangeInput = document.getElementById("maximum");
 var updateRangeButton = document.getElementById("rangeButton");
 var clearFormButton = document.getElementById("clearForm");
+var resetButton = document.getElementById("resetGame");
+var message1 = document.querySelector(".challenger1message")
+var message2 = document.querySelector(".challenger2message")
 var guessCount = 0;
 var exitButton = document.getElementById("exit");
-
-// inputSubmit1.disabled =true;
-// inputSubmit2.disabled =true;
-// inputSubmit3.disabled =true;
-// inputSubmit4.disabled =true;
-
 
 inputSubmit1.addEventListener("input", enableSubmit);
 inputSubmit2.addEventListener("input", enableSubmit);
 inputSubmit3.addEventListener("input", enableSubmit);
 inputSubmit4.addEventListener("input", enableSubmit);
+
 
 function enableSubmit() {
   if (inputSubmit1.value != '' && inputSubmit2.value != '' && inputSubmit3.value != '' && inputSubmit4.value != '') {
@@ -28,6 +26,7 @@ function enableSubmit() {
     return false;
   };
 };
+
 
 function moveNamesAndGuesses() {
   console.log("moving names and guesses down");
@@ -43,21 +42,50 @@ function moveNamesAndGuesses() {
 
 inputSubmitButton.addEventListener("click", moveNamesAndGuesses);
 
+function moveNamesAndGuesses() {
+  console.log("moving names and guesses down");
+  var chosenName1 = document.querySelector("#guesserName1");
+  var chosenName2 = document.querySelector("#guesserName2");
+  var chosenNumber1 = document.querySelector("#guesserNumber1");
+  var chosenNumber2 = document.querySelector("#guesserNumber2");
+  chosenName1.innerHTML = inputSubmit1.value;
+  chosenName2.innerHTML = inputSubmit3.value;
+  chosenNumber1.innerHTML = inputSubmit2.value;
+  chosenNumber2.innerHTML = inputSubmit4.value;
+  giveHintsChallenger1();
+  giveHintsChallenger2();
+};
+
+inputSubmitButton.addEventListener("click", clearSubmitInput);
 function clearSubmitInput() {
   console.log('clear inputs');
-document.querySelector(".input-submit1").value = "";
-document.querySelector(".input-submit2").value = "";
-document.querySelector(".input-submit3").value = "";
-document.querySelector(".input-submit4").value = "";
+// document.querySelector(".input-submit1").value = "";
+// document.querySelector(".input-submit2").value = "";
+// document.querySelector(".input-submit3").value = "";
+// document.querySelector(".input-submit4").value = "";
 }
 
-// inputSubmitButton.addEventListener("click", clearSubmitInput)
+function giveHintsChallenger1() {
+  if (inputSubmit2.value == answer) {
+    message1.innerText = "BOOM!"
+  } else if (inputSubmit2.value < answer.toString()) {
+    message1.innerText = "That's too low!"
+  } else if (inputSubmit2.value > answer.toString()) {
+    message1.innerText = "That's too high!"
+  }
+}
 
-
-inputSubmit1.addEventListener("input", enableClearFormButton);
-inputSubmit2.addEventListener("input", enableClearFormButton);
-inputSubmit3.addEventListener("input", enableClearFormButton);
-inputSubmit4.addEventListener("input", enableClearFormButton);
+function giveHintsChallenger2() {
+  console.log(inputSubmit4.value)
+  console.log(answer.toString())
+  if (inputSubmit4.value == answer) {
+    message2.innerText = "BOOM!"
+  } else if (inputSubmit4.value < answer.toString()) {
+    message2.innerText = "That's too low!"
+  } else if (inputSubmit4.value > answer.toString()) {
+    message2.innerText = "That's too high!"
+}
+}
 
 function enableClearFormButton() {
   console.log("clear button enable");
@@ -122,7 +150,7 @@ function replaceCurrentRangeText() {
   maxRange.innerHTML = maxGuess;
 
   answer = getWinningNumber();
-  console.log(answer, "this da answer")
+  console.log(answer, "this da answer");
 
 }
 
@@ -175,7 +203,15 @@ function compareGuessesToAnswer () {
     disableInputsonGameReset();
 
   }
-  clearSubmitInput()
+  clearSubmitInput();
+  disableAllButtons();
+}
+
+function disableAllButtons() {
+  inputSubmitButton.disabled = true;
+  clearFormButton.disabled = true;
+  resetGame.disabled = true;
+
 }
 
 function replaceGamecardChallengerNames() {

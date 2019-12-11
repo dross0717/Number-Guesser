@@ -47,28 +47,29 @@
           </div>
           <div class="inputFields">
             <p>Guess</p>
-            <input type="number" id="guessInputField2" class="guess input-submit4"></input>
+            <input type="number" id="guessInputField2"
+            oninput="enableClearFormButton(); confirmGuessInput()" class="guess input-submit4"></input>
           </div>
         </div>
         <div id="buttons">
-          <button disabled id="submitGuess" class="challengerButtons default submitGuessButton">SUBMIT GUESS</button>
-          <button id="resetGame" class="challengerButtons default ">RESET GAME</button>
-          <button id="clearForm" class="challengerButtons default">CLEAR FORM</button>
+          <button disabled id="submitGuess" class="challengerButtons default submitGuessButton" onclick="clearSubmitInput()">SUBMIT GUESS</button>
+          <button disabled id="resetGame" class="challengerButtons default ">RESET GAME</button>
+          <button disabled id="clearForm" class="challengerButtons default" onclick="clearForms()">CLEAR FORM</button>
         </div>
       </div>
       <div id="latestGuess">
         <p class="challengerGuess"><strong> Latest Guess </strong></p>
         <div id="challenger1Guess">
           <p class="latestGuessChallenger" id= "guesserName1"><strong>Challenger 1 Name</strong></p>
-          <p class="currentGuess" id= "guesserNumber1" >current guess</p>
-          <p id="latestGuessNumber"><strong>XX</strong></p>
-          <p class="noGuesses">no guesses yet!</p>
+          <p class="currentGuess">current guess</p>
+          <p class="latestGuessNumber" id= "guesserNumber1"><strong>XX</strong></p>
+          <p class="challenger1message">no guesses yet!</p>
         </div>
         <div id="challenger2Guess">
           <p class="latestGuessChallenger" id="guesserName2"><strong>Challenger 2 Name</strong></p>
-          <p class="currentGuess" id="guesserNumber2">current guess</p>
-          <p id="latestGuessNumber"><strong>XX</strong></p>
-          <p class="noGuesses">no guesses yet!</p>
+          <p class="currentGuess">current guess</p>
+          <p class="latestGuessNumber" id="guesserNumber2"><strong>XX</strong></p>
+          <p class="challenger2message">no guesses yet!</p>
           <!-- <p class="noGuesses">that's too high!</p>
           <p class="noGuesses">that's too low!</p> -->
         </div>
