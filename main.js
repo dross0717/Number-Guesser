@@ -8,7 +8,8 @@ var maxRangeInput = document.getElementById("maximum");
 var updateRangeButton = document.getElementById("rangeButton");
 var clearFormButton = document.getElementById("clearForm");
 var resetButton = document.getElementById("resetGame");
-
+var message1 = document.querySelector(".challenger1message")
+var message2 = document.querySelector(".challenger2message")
 
 inputSubmit1.addEventListener("input", enableSubmit);
 inputSubmit2.addEventListener("input", enableSubmit);
@@ -49,6 +50,8 @@ function moveNamesAndGuesses() {
   chosenName2.innerHTML = inputSubmit3.value;
   chosenNumber1.innerHTML = inputSubmit2.value;
   chosenNumber2.innerHTML = inputSubmit4.value;
+  giveHintsChallenger1();
+  giveHintsChallenger2();
 };
 
 inputSubmitButton.addEventListener("click", clearSubmitInput);
@@ -60,9 +63,27 @@ function clearSubmitInput() {
 // document.querySelector(".input-submit4").value = "";
 }
 
-// function giveHints() {
-//   if ()
-// }
+function giveHintsChallenger1() {
+  if (inputSubmit2.value == answer) {
+    message1.innerText = "BOOM!"
+  } else if (inputSubmit2.value < answer.toString()) {
+    message1.innerText = "That's too low!"
+  } else if (inputSubmit2.value > answer.toString()) {
+    message1.innerText = "That's too high!"
+  }
+}
+
+function giveHintsChallenger2() {
+  console.log(inputSubmit4.value)
+  console.log(answer.toString())
+  if (inputSubmit4.value == answer) {
+    message2.innerText = "BOOM!"
+  } else if (inputSubmit4.value < answer.toString()) {
+    message2.innerText = "That's too low!"
+  } else if (inputSubmit4.value > answer.toString()) {
+    message2.innerText = "That's too high!"
+}
+}
 
 function enableClearFormButton() {
   console.log("clear button enable");
