@@ -8,12 +8,20 @@ var maxRangeInput = document.getElementById("maximum");
 var updateRangeButton = document.getElementById("rangeButton");
 var clearFormButton = document.getElementById("clearForm");
 var resetButton = document.getElementById("resetGame");
+<<<<<<< HEAD
 var message1 = document.querySelector(".challenger1message");
 var message2 = document.querySelector(".challenger2message");
 var guessCount = 0;
 var exitButton = document.getElementById("exit");
 
 
+=======
+var message1 = document.querySelector(".challenger1message")
+var message2 = document.querySelector(".challenger2message")
+var guessCount = 0;
+var exitButton = document.getElementById("exit");
+
+>>>>>>> master
 inputSubmit1.addEventListener("input", enableSubmit);
 inputSubmit2.addEventListener("input", enableSubmit);
 inputSubmit3.addEventListener("input", enableSubmit);
