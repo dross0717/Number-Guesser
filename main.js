@@ -7,7 +7,8 @@ var minRangeInput = document.getElementById("minimum");
 var maxRangeInput = document.getElementById("maximum");
 var updateRangeButton = document.getElementById("rangeButton");
 var clearFormButton = document.getElementById("clearForm");
-
+var guessCount = 0;
+// var guessCount = 0;
 
 inputSubmit1.addEventListener("input", enableSubmit);
 inputSubmit2.addEventListener("input", enableSubmit);
@@ -159,7 +160,7 @@ function compareGuessesToAnswer () {
     gamecard.style.visibility = "visible"
     replaceGamecardChallengerNames();
     replaceWinnerName();
-    countNumberOfGuesses();
+
   }
   clearSubmitInput()
 }
@@ -189,10 +190,13 @@ function replaceWinnerName() {
   }
 }
 
-//
-// function countNumberOfGuesses() {
-// var inputSubmitButton = document.getElementById("submitGuess");
-// var guessCount = document.getElementById("guessCount"), count = 0;
-//   count+=2;
-//   guesscount.innerText =
-// }
+
+inputSubmitButton.addEventListener('click', countGuesses);
+
+
+function countGuesses() {
+  var guessCounterGamecard = document.getElementById("guessNumber");
+guessCount+=2;
+guessCounterGamecard.innerText = guessCount;
+
+}
