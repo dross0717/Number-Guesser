@@ -8,20 +8,11 @@ var maxRangeInput = document.getElementById("maximum");
 var updateRangeButton = document.getElementById("rangeButton");
 var clearFormButton = document.getElementById("clearForm");
 var resetButton = document.getElementById("resetGame");
-<<<<<<< HEAD
-var message1 = document.querySelector(".challenger1message");
-var message2 = document.querySelector(".challenger2message");
-var guessCount = 0;
-var exitButton = document.getElementById("exit");
-
-
-=======
 var message1 = document.querySelector(".challenger1message")
 var message2 = document.querySelector(".challenger2message")
 var guessCount = 0;
 var exitButton = document.getElementById("exit");
 
->>>>>>> master
 inputSubmit1.addEventListener("input", enableSubmit);
 inputSubmit2.addEventListener("input", enableSubmit);
 inputSubmit3.addEventListener("input", enableSubmit);
@@ -34,8 +25,7 @@ function enableSubmit() {
   } else {
     return false;
   };
-};
-
+}
 
 function moveNamesAndGuesses() {
   console.log("moving names and guesses down");
@@ -68,10 +58,6 @@ function moveNamesAndGuesses() {
 inputSubmitButton.addEventListener("click", clearSubmitInput);
 function clearSubmitInput() {
   console.log('clear inputs');
-// document.querySelector(".input-submit1").value = "";
-// document.querySelector(".input-submit2").value = "";
-// document.querySelector(".input-submit3").value = "";
-// document.querySelector(".input-submit4").value = "";
 }
 
 function giveHintsChallenger1() {
@@ -163,8 +149,6 @@ function replaceCurrentRangeText() {
 
 }
 
-
-
 inputSubmit2.addEventListener("input", confirmGuessInput);
 inputSubmit4.addEventListener("input", confirmGuessInput);
 
@@ -183,15 +167,12 @@ function confirmGuessInput() {
 
 }
 
-
-// need to call after user inputs range and hits update
 function getWinningNumber() {
   var minRangeInput = parseInt(document.getElementById("minimum").value);
   var maxRangeInput = parseInt(document.getElementById("maximum").value);
   return Math.floor(Math.random() * (maxRangeInput - minRangeInput) + minRangeInput);
 
 }
-
 
 inputSubmitButton.addEventListener("click", compareGuessesToAnswer);
 
@@ -203,6 +184,10 @@ function compareGuessesToAnswer () {
     gamecard.style.visibility = "visible";
     minRangeInput.value = "";
     maxRangeInput.value = "";
+    inputSubmit1.value = "";
+    inputSubmit2.value = "";
+    inputSubmit3.value = "";
+    inputSubmit4.value = "";
     updateRangeButton.disabled = true;
     clearFormButton.disabled = true;
     updateRangeButton.classList.remove("updateButton");
@@ -220,7 +205,6 @@ function disableAllButtons() {
   inputSubmitButton.disabled = true;
   clearFormButton.disabled = true;
   resetGame.disabled = true;
-
 }
 
 function replaceGamecardChallengerNames() {
@@ -248,10 +232,7 @@ function replaceWinnerName() {
   }
 }
 
-
 inputSubmitButton.addEventListener('click', countGuesses);
-
-
 function countGuesses() {
   var guessCounterGamecard = document.getElementById("guessNumber");
 guessCount+=2;
@@ -287,5 +268,6 @@ function disableInputsonGameReset() {
   inputSubmit2.disabled = false;
   inputSubmit3.disabled = false;
   inputSubmit4.disabled = false;
+  }
 }
 }

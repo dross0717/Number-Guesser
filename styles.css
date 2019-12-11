@@ -29,10 +29,11 @@ body {
 /* Challenger Name Input Card Styling */
 #challengerNames {
   background-color: white;
-  border: solid 1px #D0D2D3;
+  border: 1px #EEEEEE solid;
   height: auto;
   width: 98%;
   margin-top: 10px;
+  padding-bottom:10px;
 }
 
 .challengerButtons {
@@ -115,7 +116,7 @@ body {
 #latestGuess {
   width: 98%;
   background-color: white;
-  border: solid 1px #D0D2D3;
+  border: 1px #EEEEEE solid;
   height: 200px;
   margin-top: 10px;
   display: flex;
@@ -257,6 +258,7 @@ input {
   margin-top: 10px;
   float: right;
   width: 98%;
+  visibility: hidden;
 
 }
 
