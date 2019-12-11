@@ -270,7 +270,4 @@ function disableInputsonGameReset() {
   inputSubmit4.disabled = false;
   }
 }
-
-function generateNewGamecard() {
-
 }
