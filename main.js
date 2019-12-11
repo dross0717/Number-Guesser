@@ -8,11 +8,20 @@ var maxRangeInput = document.getElementById("maximum");
 var updateRangeButton = document.getElementById("rangeButton");
 var clearFormButton = document.getElementById("clearForm");
 var resetButton = document.getElementById("resetGame");
+<<<<<<< HEAD
+var message1 = document.querySelector(".challenger1message");
+var message2 = document.querySelector(".challenger2message");
+var guessCount = 0;
+var exitButton = document.getElementById("exit");
+
+
+=======
 var message1 = document.querySelector(".challenger1message")
 var message2 = document.querySelector(".challenger2message")
 var guessCount = 0;
 var exitButton = document.getElementById("exit");
 
+>>>>>>> master
 inputSubmit1.addEventListener("input", enableSubmit);
 inputSubmit2.addEventListener("input", enableSubmit);
 inputSubmit3.addEventListener("input", enableSubmit);
@@ -264,21 +273,6 @@ function deleteGameCard() {
   console.log("calldisableinput");
 }
 
-
-exitButton.addEventListener('click', deleteGameCard);
-
-function deleteGameCard() {
-  gamecard.style.visibility = "hidden";
-  minRangeInput.value = "";
-  maxRangeInput.value = "";
-  inputSubmit1.value = "";
-  inputSubmit2.value = "";
-  inputSubmit3.value = "";
-  inputSubmit4.value = "";
-  console.log("calldisableinput");
-}
-
-
 minRangeInput.addEventListener('input', disableInputsonGameReset);
 
 function disableInputsonGameReset() {
@@ -295,4 +289,3 @@ function disableInputsonGameReset() {
   inputSubmit4.disabled = false;
 }
 }
-
