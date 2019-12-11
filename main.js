@@ -7,14 +7,11 @@ var minRangeInput = document.getElementById("minimum");
 var maxRangeInput = document.getElementById("maximum");
 var updateRangeButton = document.getElementById("rangeButton");
 var clearFormButton = document.getElementById("clearForm");
+var resetButton = document.getElementById("resetGame");
+var message1 = document.querySelector(".challenger1message")
+var message2 = document.querySelector(".challenger2message")
 var guessCount = 0;
 var exitButton = document.getElementById("exit");
-
-// inputSubmit1.disabled =true;
-// inputSubmit2.disabled =true;
-// inputSubmit3.disabled =true;
-// inputSubmit4.disabled =true;
-
 
 inputSubmit1.addEventListener("input", enableSubmit);
 inputSubmit2.addEventListener("input", enableSubmit);
@@ -29,6 +26,7 @@ function enableSubmit() {
     return false;
   };
 };
+
 
 function moveNamesAndGuesses() {
   console.log("moving names and guesses down");
@@ -54,6 +52,8 @@ function moveNamesAndGuesses() {
   chosenName2.innerHTML = inputSubmit3.value;
   chosenNumber1.innerHTML = inputSubmit2.value;
   chosenNumber2.innerHTML = inputSubmit4.value;
+  giveHintsChallenger1();
+  giveHintsChallenger2();
 };
 
 inputSubmitButton.addEventListener("click", clearSubmitInput);
@@ -65,7 +65,27 @@ function clearSubmitInput() {
 // document.querySelector(".input-submit4").value = "";
 }
 
+function giveHintsChallenger1() {
+  if (inputSubmit2.value == answer) {
+    message1.innerText = "BOOM!"
+  } else if (inputSubmit2.value < answer.toString()) {
+    message1.innerText = "That's too low!"
+  } else if (inputSubmit2.value > answer.toString()) {
+    message1.innerText = "That's too high!"
+  }
+}
 
+function giveHintsChallenger2() {
+  console.log(inputSubmit4.value)
+  console.log(answer.toString())
+  if (inputSubmit4.value == answer) {
+    message2.innerText = "BOOM!"
+  } else if (inputSubmit4.value < answer.toString()) {
+    message2.innerText = "That's too low!"
+  } else if (inputSubmit4.value > answer.toString()) {
+    message2.innerText = "That's too high!"
+}
+}
 
 function enableClearFormButton() {
   console.log("clear button enable");
@@ -183,7 +203,15 @@ function compareGuessesToAnswer () {
     disableInputsonGameReset();
 
   }
-  clearSubmitInput()
+  clearSubmitInput();
+  disableAllButtons();
+}
+
+function disableAllButtons() {
+  inputSubmitButton.disabled = true;
+  clearFormButton.disabled = true;
+  resetGame.disabled = true;
+
 }
 
 function replaceGamecardChallengerNames() {

@@ -155,12 +155,13 @@ p.noGuesses {
   margin-top: 1em;
 }
 
-#latestGuessNumber {
+.latestGuessNumber {
   font-size: 30pt;
   color: #dd1972;
   text-align: center;
   margin-top: -10px;
   margin-bottom: -10px;
+  font-weight: bold;
 }
 
 /* Styling for Header */
