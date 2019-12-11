@@ -174,8 +174,6 @@ function confirmGuessInput() {
 
 }
 
-
-// need to call after user inputs range and hits update
 function getWinningNumber() {
   var minRangeInput = parseInt(document.getElementById("minimum").value);
   var maxRangeInput = parseInt(document.getElementById("maximum").value);
@@ -194,6 +192,10 @@ function compareGuessesToAnswer () {
     gamecard.style.visibility = "visible";
     minRangeInput.value = "";
     maxRangeInput.value = "";
+    inputSubmit1.value = "";
+    inputSubmit2.value = "";
+    inputSubmit3.value = "";
+    inputSubmit4.value = "";
     updateRangeButton.disabled = true;
     clearFormButton.disabled = true;
     updateRangeButton.classList.remove("updateButton");
@@ -265,20 +267,6 @@ function deleteGameCard() {
 }
 
 
-exitButton.addEventListener('click', deleteGameCard);
-
-function deleteGameCard() {
-  gamecard.style.visibility = "hidden";
-  minRangeInput.value = "";
-  maxRangeInput.value = "";
-  inputSubmit1.value = "";
-  inputSubmit2.value = "";
-  inputSubmit3.value = "";
-  inputSubmit4.value = "";
-  console.log("calldisableinput");
-}
-
-
 minRangeInput.addEventListener('input', disableInputsonGameReset);
 
 function disableInputsonGameReset() {
@@ -295,4 +283,3 @@ function disableInputsonGameReset() {
   inputSubmit4.disabled = false;
 }
 }
-
