@@ -99,6 +99,10 @@ body {
   color: #FFFFFF;
 }
 
+.default:hover {
+  background-color: #6E6E6E
+}
+
 .clearForm {
   background-color: #6E6E6E;
 }
@@ -157,7 +161,7 @@ p.noGuesses {
 }
 
 .latestGuessNumber {
-  font-size: 30pt;
+  font-size: 45pt;
   color: #dd1972;
   text-align: center;
   margin-top: -10px;
@@ -240,6 +244,10 @@ p.noGuesses {
   font-size: 20px;
   font-weight: bold;
   margin: 18px 7px 0px 0px;
+}
+
+.range-button:hover {
+  background-color: #6E6E6E;
 }
 
 .updateButton {
