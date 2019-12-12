@@ -270,7 +270,7 @@ input {
   text-align: center;
 }
 
-.winnerName {
+#winnerName {
   text-align: center;
   font-size: 18pt;
   margin-top: 10px;

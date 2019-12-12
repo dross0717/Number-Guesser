@@ -105,6 +105,7 @@ document.getElementById("guessInputField").value = "";
 document.getElementById("nameInputField").value = "";
 }
 
+
 updateRangeButton.addEventListener("click", submitRange)
 minRangeInput.addEventListener("input", submitRange)
 maxRangeInput.addEventListener("input", submitRange)
@@ -184,10 +185,6 @@ function compareGuessesToAnswer () {
     gamecard.style.visibility = "visible";
     minRangeInput.value = "";
     maxRangeInput.value = "";
-    inputSubmit1.value = "";
-    inputSubmit2.value = "";
-    inputSubmit3.value = "";
-    inputSubmit4.value = "";
     updateRangeButton.disabled = true;
     clearFormButton.disabled = true;
     updateRangeButton.classList.remove("updateButton");
@@ -195,6 +192,10 @@ function compareGuessesToAnswer () {
     replaceGamecardChallengerNames();
     replaceWinnerName();
     disableInputsonGameReset();
+    inputSubmit1.value = "";
+    inputSubmit2.value = "";
+    inputSubmit3.value = "";
+    inputSubmit4.value = "";
 
   }
   clearSubmitInput();
@@ -218,7 +219,6 @@ function replaceGamecardChallengerNames() {
 }
 
 function replaceWinnerName() {
-  //if guess 1 is the right answer then display name 1
   var name1 = document.getElementById("nameInputField").value;
   var name2 = document.getElementById("nameInputField2").value;
   var guess1 = parseInt(document.getElementById("guessInputField").value);
@@ -269,5 +269,4 @@ function disableInputsonGameReset() {
   inputSubmit3.disabled = false;
   inputSubmit4.disabled = false;
   }
-}
 }
